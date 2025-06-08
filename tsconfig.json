@@ -1,8 +1,8 @@
 {
   "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
-    "target": "es5",
-    "module": "es2015",
+    "target": "esnext",
+    "module": "esnext",
     "jsx": "react-native",
     "allowJs": true,
     "skipLibCheck": true,
@@ -14,13 +14,19 @@
     "baseUrl": ".",
     "typeRoots": ["./types", "./node_modules/@types"],
     "paths": {
-      "@/*": ["./src/*"],
-      "@components/*": ["./src/components/*"],
-      "@screens/*": ["./src/screens/*"],
-      "@hooks/*": ["./src/hooks/*"],
-      "@types/*": ["./src/types/*"]
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@screens/*": ["src/screens/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@types/*": ["src/types/*"]
     }
   },
-  "exclude": ["node_modules", "build"],
+  "exclude": [
+    "node_modules",
+    "build",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js"
+  ],
   "include": ["./types", "src/**/*"]
 }
